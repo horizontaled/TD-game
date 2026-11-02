@@ -800,7 +800,7 @@ TerrainCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_TerrainData: {fileID: 15600000, guid: 5dd486c66fcca524e847142e1eabada0, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: 04bbf318c6871b44587aecf9098f6bb3, type: 2}
   m_EnableTreeColliders: 1
 --- !u!218 &1241981375
 Terrain:
