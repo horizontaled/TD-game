@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; width: 100px; height: 100px; justify-content: center; align-items: center; position: absolute; top: 767px; left: 893px;">
+        <ui:Image style="height: 1080px; width: 1920px; background-image: url(&quot;project://database/Assets/Images/Tempmainmenuart.png?fileID=2800000&amp;guid=8de171e09f2c8ff458012490742f3715&amp;type=3#Tempmainmenuart&quot;); position: absolute; top: -770px; right: -924px; left: -895px; filter: blur(6);"/>
+        <ui:Button text="PLAY" name="PlayButton" style="-unity-text-align: lower-center; position: relative; width: 400px; height: 80px; font-size: 32px; -unity-font-style: bold; margin-bottom: 20px;"/>
+        <ui:Button text="CREDIT" name="CreditButton" style="-unity-text-align: lower-center; position: relative; width: 409px; margin-bottom: 20px; height: 80px; font-size: 32px; -unity-font-style: bold;"/>
+        <ui:Button text="QUIT&#10;" name="QuitButton" style="-unity-text-align: lower-center; position: relative; width: 409px; margin-bottom: 20px; -unity-font-style: bold; font-size: 32px; height: 80px;"/>
+    </ui:VisualElement>
+</ui:UXML>
