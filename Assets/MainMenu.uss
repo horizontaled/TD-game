@@ -1,0 +1,33 @@
+:root {
+}
+
+.Button {
+    -unity-text-align: lower-center;
+    position: relative;
+    width: 400px;
+    height: 80px;
+    font-size: 52px;
+    -unity-font-style: bold;
+    margin-bottom: 36px;
+    align-items: center;
+    border-top-left-radius: 26px;
+    border-top-right-radius: 26px;
+    border-bottom-right-radius: 26px;
+    border-bottom-left-radius: 26px;
+}
+
+.Button:hover {
+    -unity-text-align: lower-center;
+    position: relative;
+    width: 400px;
+    height: 80px;
+    font-size: 52px;
+    -unity-font-style: bold;
+    margin-bottom: 36px;
+    align-items: center;
+    border-top-left-radius: 26px;
+    border-top-right-radius: 26px;
+    border-bottom-right-radius: 26px;
+    border-bottom-left-radius: 26px;
+    background-color: rgb(255, 138, 0);
+}
