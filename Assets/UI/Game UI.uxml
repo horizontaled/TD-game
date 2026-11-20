@@ -1,7 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
     <ui:VisualElement name="HUD" picking-mode="Ignore" style="flex-grow: 1; justify-content: space-between;">
         <ui:VisualElement name="top" picking-mode="Ignore" style="flex-direction: row; justify-content: space-between; padding: 20px; background-color: rgba(0, 0, 0, 0.6);">
-            <ui:Label name="energy-label" text="Energy:0" style="font-size: 36px; color: rgb(255, 220, 80);"/>
+            <ui:Image source="project://database/Assets/Images/Energy-Symbol-PNG-Free-Download.png?fileID=2800000&amp;guid=99a5f8e6be6e2184c9c50cf4ef0908d4&amp;type=3#Energy-Symbol-PNG-Free-Download" style="height: 74px; width: 84px; position: absolute; top: 20px; left: 10px;"/>
+            <ui:Label name="energy-label" text="Energy:0" style="font-size: 36px; color: rgb(255, 220, 80); width: 155px; flex-direction: column; flex-wrap: nowrap; justify-content: space-between; align-self: flex-start; height: 63px; right: -83px;"/>
             <ui:Label name="score-label" text="Score: 0" style="font-size: 36px; color: white;"/>
         </ui:VisualElement>
         <ui:VisualElement name="bottom" style="flex-direction: row; justify-content: center; height: 140px; background-color: rgba(0, 0, 0, 0.6);">

@@ -1,48 +1,46 @@
+using System.Collections;
 using UnityEngine;
 public class EnemeyMovment : MonoBehaviour
 {
-    
-       [SerializeField]
-       private Transform[] waypoints;
-   
+    [SerializeField] private Transform[] waypoints;
+    [SerializeField] private float moveSpeed = 2f;
+    [SerializeField] private Animator animator;
+    [SerializeField] private string hitTrigger = "Hit";  
+    [SerializeField] private float destroyDelay = 0.8f;
+    private int waypointIndex = 0;
+    private bool reachedEnd = false;
+    private void Start()
+    {
+        transform.position = waypoints[waypointIndex].position;
 
-       [SerializeField]
-       private float moveSpeed = 2f;
-   
- 
-       private int waypointIndex = 0;
-
-   	private void Start () {
-   
-  
-           transform.position = waypoints[waypointIndex].transform.position;
-   	}
-   	
-
-   	private void Update () {
-   
-       
-           Move();
-   	}
-   
-
-       private void Move()
-       {
-   
-           if (waypointIndex <= waypoints.Length - 1)
-           {
-   
-       
-               transform.position = Vector3.MoveTowards(transform.position,
-                  waypoints[waypointIndex].transform.position,
-                  moveSpeed * Time.deltaTime);
-   
-        
-               if (transform.position == waypoints[waypointIndex].transform.position)
-               {
-                   waypointIndex += 1;
-               }
-           }
-       }
-   }
-
+        if (animator == null)
+            animator = GetComponentInChildren<Animator>();
+    }
+    private void Update()
+    {
+        if (!reachedEnd) Move();
+    }
+    private void Move()
+    {
+        transform.position = Vector3.MoveTowards(
+            transform.position,
+            waypoints[waypointIndex].position,
+            moveSpeed * Time.deltaTime);
+        if (transform.position == waypoints[waypointIndex].position)
+        {
+            waypointIndex++;
+            if (waypointIndex >= waypoints.Length)
+            {
+                reachedEnd = true;
+                StartCoroutine(HitAndDie());
+            }
+        }
+    }
+    private IEnumerator HitAndDie()
+    {
+        if (animator != null)
+            animator.SetTrigger(hitTrigger);
+        yield return new WaitForSeconds(destroyDelay);
+        Destroy(gameObject);
+    }
+}
