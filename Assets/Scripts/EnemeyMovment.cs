@@ -78,6 +78,7 @@ public class EnemeyMovment : MonoBehaviour
     {
         isDead = true;
         SpawnEffect(deathEffect);
+        Debug.Log("Enemy died, adding score"); 
         ScoreSystem.instance.Add(10);
         Destroy(gameObject); 
    
@@ -95,7 +96,9 @@ public class EnemeyMovment : MonoBehaviour
         if (animator != null)
             animator.SetTrigger(hitTrigger);
 
-        yield return new WaitForSeconds(destroyDelay);
+        yield return new WaitForSeconds(destroyDelay); 
+        Debug.Log("Enemy died, adding score"); 
+        ScoreSystem.instance.Add(10);
         Destroy(gameObject);
     }
 }
