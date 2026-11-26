@@ -43,10 +43,7 @@ public class EnemeyMovment : MonoBehaviour
 
     private void Move()
     {
-        transform.position = Vector3.MoveTowards(
-            transform.position,
-            waypoints[waypointIndex].position,
-            moveSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position,waypoints[waypointIndex].position,moveSpeed * 0.15f);
 
         if (transform.position == waypoints[waypointIndex].position)
         {
