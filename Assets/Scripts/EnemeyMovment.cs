@@ -6,7 +6,8 @@ public class EnemeyMovment : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private Transform[] waypoints;
     [SerializeField] private float moveSpeed = 2f;
-
+    [SerializeField] private float distanceToReach = 0.1f;
+    
     [Header("Animation")]
     [SerializeField] private Animator animator;
     [SerializeField] private string hitTrigger = "Hit";
@@ -45,7 +46,7 @@ public class EnemeyMovment : MonoBehaviour
     {
         transform.position = Vector3.MoveTowards(transform.position,waypoints[waypointIndex].position,moveSpeed * 0.15f);
 
-        if (transform.position == waypoints[waypointIndex].position)
+        if ( Vector3.Distance(transform.position,  waypoints[waypointIndex].position)  <= distanceToReach )
         {
             waypointIndex++;
             if (waypointIndex >= waypoints.Length)
@@ -77,7 +78,9 @@ public class EnemeyMovment : MonoBehaviour
     {
         isDead = true;
         SpawnEffect(deathEffect);
-        Destroy(gameObject);
+        ScoreSystem.instance.Add(10);
+        Destroy(gameObject); 
+   
     }
 
     private void SpawnEffect(GameObject effectPrefab)

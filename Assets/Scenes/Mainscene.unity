@@ -539,6 +539,7 @@ MonoBehaviour:
   - {fileID: 956351486}
   - {fileID: 566355212}
   moveSpeed: 0.11
+  distanceToReach: 0.1
   animator: {fileID: 0}
   hitTrigger: Hit
   destroyDelay: 0.8
@@ -4085,6 +4086,7 @@ GameObject:
   - component: {fileID: 2128900602}
   - component: {fileID: 2128900604}
   - component: {fileID: 2128900605}
+  - component: {fileID: 2128900606}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -4159,6 +4161,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Energysystem
   defaultCurrency: 0
   currency: 0
+--- !u!114 &2128900606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128900601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 284791faed386f84eb2af42cc67328a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreSystem
+  score: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
