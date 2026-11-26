@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+
 public class CardTest : MonoBehaviour
 {
     public GameObject card0Prefab;
@@ -12,13 +13,24 @@ public class CardTest : MonoBehaviour
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
 
-        root.Q("card-0").RegisterCallback<ClickEvent>(e => selectedPrefab = card0Prefab);
-        root.Q("card-1").RegisterCallback<ClickEvent>(e => selectedPrefab = card1Prefab);
-        root.Q("card-2").RegisterCallback<ClickEvent>(e => selectedPrefab = card2Prefab);
+        root.Q("card-0").RegisterCallback<ClickEvent>(e => SelectCard(card0Prefab));
+        root.Q("card-1").RegisterCallback<ClickEvent>(e => SelectCard(card1Prefab));
+        root.Q("card-2").RegisterCallback<ClickEvent>(e => SelectCard(card2Prefab));
     }
 
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+            SelectCard(card0Prefab);
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+            SelectCard(card1Prefab);
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+            SelectCard(card2Prefab);
+
+    
         if (selectedPrefab == null || !Input.GetMouseButtonDown(0))
             return;
 
@@ -27,5 +39,11 @@ public class CardTest : MonoBehaviour
             Instantiate(selectedPrefab, hit.point, Quaternion.identity);
             selectedPrefab = null;
         }
+    }
+
+    void SelectCard(GameObject card)
+    {
+        selectedPrefab = card;
+        Debug.Log($"Selected {card.name}");
     }
 }

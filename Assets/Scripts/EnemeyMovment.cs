@@ -63,12 +63,7 @@ public class EnemeyMovment : MonoBehaviour
     {
         if (other.CompareTag(damageTag)) TakeDamage(damagePerHit);
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag(damageTag)) TakeDamage(damagePerHit);
-    }
-
+    
     public void TakeDamage(float amount)
     {
         if (isDead) return;
