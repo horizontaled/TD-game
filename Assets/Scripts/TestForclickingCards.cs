@@ -6,7 +6,7 @@ public class CardTest : MonoBehaviour
     public GameObject card0Prefab;
     public GameObject card1Prefab;
     public GameObject card2Prefab;
-
+    [SerializeField] LayerMask pathMask;
     GameObject selectedPrefab;
 
     void OnEnable()
@@ -36,6 +36,13 @@ public class CardTest : MonoBehaviour
 
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit))
         {
+
+            if ((pathMask.value & (1 << hit.collider.gameObject.layer)) != 0)
+            {
+                Debug.Log("You Can't place here");
+                return; 
+            }
+
             Instantiate(selectedPrefab, hit.point, Quaternion.identity);
             selectedPrefab = null;
         }
